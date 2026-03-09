@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>theiagro — Under Construction</title>
+  <meta name="description" content="theiagro — Λύσεις αισθητήρων & υπηρεσίες για τον αγρότη. Coming soon." />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#0b1020" />
+
+  <!-- Google Analytics (προαιρετικό) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPBYPQYSSB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZPBYPQYSSB');
+  </script>
+
+  <style>
+    :root{
+      --bg1:#070a14;
+      --bg2:#0b1020;
+      --card:rgba(255,255,255,.06);
+      --border:rgba(255,255,255,.10);
+      --text:rgba(232,236,255,.92);
+      --muted:rgba(232,236,255,.72);
+      --muted2:rgba(232,236,255,.60);
+      --shadow:0 18px 55px rgba(0,0,0,.50);
+      --accent1:#35d07f;
+      --accent2:#7aa7ff;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 700px at 20% 10%, rgba(53,208,127,.18), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(122,167,255,.16), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .wrap{ width:min(980px,100%); display:grid; gap:18px; }
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:26px;
+      overflow:hidden;
+      position:relative;
+    }
+    .card:before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:
+        radial-gradient(600px 300px at 20% 0%, rgba(53,208,127,.14), transparent 60%),
+        radial-gradient(520px 320px at 95% 20%, rgba(122,167,255,.12), transparent 55%);
+      pointer-events:none;
+    }
+
+    .row{ display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .brand{ display:flex; gap:14px; align-items:center; min-width:260px; }
+    .logo{
+      width:110px; height:110px; border-radius:22px; border:1px solid var(--border);
+      background:rgba(255,255,255,.04); display:grid; place-items:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.35); padding:10px; overflow:hidden;
+    }
+    .logo-img{ width:100%; height:100%; object-fit:contain; display:block; border-radius:12px; }
+    .brand h1{ margin:0; font-size:34px; letter-spacing:.2px; line-height:1.05; }
+    .brand .sub{ margin-top:4px; font-size:13px; color:var(--muted2); letter-spacing:.3px; }
+    .badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:999px; border:1px solid var(--border); background:rgba(255,255,255,.04); color:var(--muted); font-size:14px; white-space:nowrap; }
+    .dot{ width:9px; height:9px; border-radius:999px; background:var(--accent1); box-shadow:0 0 0 6px rgba(53,208,127,.15); }
+    .content{ display:grid; grid-template-columns:1.05fr .95fr; gap:18px; margin-top:16px; }
+    @media (max-width:860px){ .content{ grid-template-columns:1fr; } }
+    .lead{ font-size:16px; line-height:1.6; color:var(--muted); margin:0; }
+    .field-photo{ margin-top:18px; border-radius:18px; overflow:hidden; border:1px solid var(--border); background:rgba(255,255,255,.03); box-shadow:0 10px 30px rgba(0,0,0,.25); }
+    .field-photo img{ width:100%; height:220px; object-fit:cover; display:block; }
+
+    .panel{ border:1px solid var(--border); background:rgba(255,255,255,.03); border-radius:18px; padding:16px; }
+    .panel h2{ margin:0 0 10px; font-size:14px; color:var(--muted2); font-weight:650; text-transform:uppercase; }
+    .links{ display:grid; gap:10px; }
+    .btn{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 14px; border-radius:14px; border:1px solid var(--border); background:rgba(255,255,255,.04); color:var(--text); text-decoration:none; transition:transform .08s ease, background .12s ease, border-color .12s ease; }
+    .btn:hover{ transform:translateY(-1px); background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.16); }
+    .btn small{ color:var(--muted2); display:block; margin-top:2px; font-size:12px; }
+    .arrow{ opacity:.7; font-size:18px; }
+    .footer{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between; margin-top:16px; color:var(--muted2); font-size:13px; }
+    .pill{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:1px solid var(--border); background:rgba(255,255,255,.03); color:var(--muted); }
+    .signup{ margin-top:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,.08); }
+    .signup p{ margin:0 0 10px; color:var(--muted); font-size:14px; line-height:1.45; }
+    .field{ width:100%; padding:12px 14px; border-radius:14px; border:1px solid var(--border); background:rgba(255,255,255,.04); color:var(--text); outline:none; font:inherit; }
+    .field::placeholder{ color:var(--muted2); }
+    .field:focus{ border-color:rgba(122,167,255,.45); background:rgba(255,255,255,.06); }
+    .field + .field{ margin-top:10px; }
+    textarea.field{ min-height:120px; resize:vertical; margin-top:10px; }
+    .submit-btn{ width:100%; margin-top:10px; padding:12px 14px; border-radius:14px; border:1px solid var(--border); background:rgba(255,255,255,.08); color:var(--text); cursor:pointer; font:inherit; transition:transform .08s ease, background .12s ease, border-color .12s ease; }
+    .submit-btn:hover{ transform:translateY(-1px); background:rgba(255,255,255,.11); border-color:rgba(255,255,255,.16); }
+    .note{ margin-top:8px; font-size:12px; color:var(--muted2); line-height:1.4; }
+    a{color:inherit}
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="card" aria-label="theiagro under construction">
+      <div class="row">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">
+            <img src="logo.png" alt="" class="logo-img"/>
+          </div>
+          <div>
+            <h1>theiagro</h1>
+            <div class="sub">Sensors • Services • Data for agriculture</div>
+          </div>
+        </div>
+
+        <div class="badge" title="Under construction">
+          <span class="dot" aria-hidden="true"></span>
+          Under construction • Coming soon
+        </div>
+      </div>
+
+      <div class="content">
+        <div>
+          <p class="lead">
+            Η theiagro φέρνει την «όραση» της τεχνολογίας στο χωράφι,
+            εστιάζοντας σε λύσεις αισθητήρων και εργαλεία τεχνητής νοημοσύνης για απομακρυσμένη
+            παρακολούθηση και πιο στοχευμένες αποφάσεις.
+          </p>
+
+          <div class="field-photo">
+            <img src="olive-field.png" alt="Ελαιώνας"/>
+          </div>
+
+          <div class="footer">
+            <span class="pill">theiagro.com</span>
+            <span class="pill">theiagro.gr</span>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="Contact links and form">
+          <h2>Επικοινωνία</h2>
+
+          <div class="links">
+            <a class="btn" href="https://www.linkedin.com/in/efthymios-chrysanthopoulos-bb73b4156/" target="_blank">
+              <div>
+                <strong>Efthymios Chrysanthopoulos</strong>
+                <small>LinkedIn profile</small>
+              </div>
+              <span class="arrow">↗</span>
+            </a>
+
+            <a class="btn" href="https://www.linkedin.com/in/petros-stratis-a080b935/" target="_blank">
+              <div>
+                <strong>Petros Stratis</strong>
+                <small>LinkedIn profile</small>
+              </div>
+              <span class="arrow">↗</span>
+            </a>
+          </div>
+
+          <div class="signup">
+            <h2>Επικοινωνία / Ερώτηση</h2>
+            <p>Στείλε το αίτημά σου ή την ερώτησή σου και θα επικοινωνήσουμε μαζί σου.</p>
+
+            <!-- Formspree -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <input class="field" type="text" name="name" placeholder="Το όνομά σας" required />
+              <input class="field" type="email" name="email" placeholder="Το email σας" required />
+              <textarea class="field" name="message" placeholder="Γράψτε το αίτημά σας ή την ερώτησή σας" required></textarea>
+              <button class="submit-btn" type="submit">Στείλε το αίτημά σου</button>
+            </form>
+
+            <div class="note">Θα χρησιμοποιηθεί μόνο για επικοινωνία σχετικά με το theiagro.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
